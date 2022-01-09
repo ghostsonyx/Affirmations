@@ -15,8 +15,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Load static affirmations
         val myDataset = Datasource().loadAffirmations()
 
+
+        // Bind Adapter
         binding.recyclerView.adapter = ItemAdapter(this, myDataset)
         binding.recyclerView.setHasFixedSize(true)
 
